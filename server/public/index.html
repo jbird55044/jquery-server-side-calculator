@@ -13,13 +13,13 @@
 <body>
     <p> Calculator Here </p>
     <div class="inputAreaClass">
-        <input id="calcInputId" type="number"  placeholder="Numeric Input Here" >
+        <input id="calcInputId" type="text"  placeholder="Numeric Input Here" >
         <button id="submitButtonId">Submit</button>
         <button id="clearButtonId">CE</button>
     </div>
 
     <div class="buttonAreaClass">
-        <table>
+        <table id="calcButtonsId">
             <tr>
                 <td><input type="button" id="num7ButtonId" value="7"></td>
                 <td><input type="button" id="num8ButtonId" value="8"></td>
@@ -48,8 +48,16 @@
     </div>
 
     <div class="answerAreaClass">
-        <p>answers here</p>
+        <p>The result:</p>
+        <input type="text" id="calculatedAnswerId" size=20> 
+    </div>
+    <div class="tapeAreaClass">
+        <button id="clearTapeId">Clear Tape</button>
+        <ul class="tapeOrderedListClass">
+            <li>tape entry one place holder</li>
+
+        </ul>
     </div>
 
 </body>
-</html>  
+</html>   

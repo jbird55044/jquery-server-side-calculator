@@ -1,7 +1,14 @@
 body {
     background-color: cadetblue;
+    margin: 10px;
 }
 
+table {
+    margin: 20px;
+    background-color: teal;
+    border: 2px solid rgb(1, 73, 73);
+
+}
 table td {
     padding: 2px;
 }
@@ -10,3 +17,20 @@ table input {
     background-color: wheat;
     width: 25px;
 }
+
+.answerAreaClass {
+    margin: 10px;
+    padding: 0px
+}
+
+.answerAreaClass input {
+    margin: 10px;
+    margin-bottom: 0px;
+    padding: 3px;
+}
+
+.answerAreaClass p {
+    margin: 3px;
+    margin-bottom: 0px;
+    padding-top: 5px;
+} 

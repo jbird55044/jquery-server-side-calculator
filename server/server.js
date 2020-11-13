@@ -15,26 +15,32 @@ app.use( express.static('server/public') );
 app.use( bodyParser.urlencoded ( {extended: true}) );
 
 // ---  route for dynamic data  (vary for earch assignment)
-
-const catArray = ['Abby', 'Kyo', 'Fred', 'pickles', 'chubby'];
+let calcData = require('./modules/calcdata');  // js is assumed
 
 // to get to data:  http://localhost:5000/cat
-app.get('/cat', (req, res) => {
-    console.log (`Sending cat data`);
-    res.send(catArray);
+app.get('/calcexchange', (req, res) => {
+    console.log (`Sending calcArray data`);
+    res.send(calcData);
 });
 
-app.post ('/cat' , (req, res) => {
-    let catData = req.body.cat;
-    console.log (`Getting cat data`, catData);
+app.post ('/calcexchange' , (req, res) => {
+    let passedData = req.body.inputArray;
     res.sendStatus(200);   // tells requester all is OK
-    catArray.push(catData);
-    //res.send(catArray);
+    calcData.push(passedData);
+    console.log (`Passed Data at POST`, passedData);
 });
+
+app.post ('/cleartape' , (req, res) => {
+    let passedData = req.body.inputArray;
+    res.sendStatus(200);   // tells requester all is OK
+    calcData.splice(0,calcData.length);
+    console.log (`Clear Tape Post`, calcData);
+});
+
 // ===  end of routes
 
 
 // start server listening for requests
 app.listen( port, () => {
     console.log (`Server is Listening on port ${port}`);
-}); 
+});  
