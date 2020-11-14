@@ -1,4 +1,4 @@
-let calcData = [];
+let tapeData = [];
 
 // export array from file so it can be used in another file
-module.exports = calcData;
+module.exports = tapeData;
