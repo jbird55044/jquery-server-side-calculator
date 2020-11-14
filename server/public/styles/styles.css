@@ -4,29 +4,45 @@ body {
 }
 
 .calculatorClass {
-    width: 300px;
-    background-color: whitesmoke;
+    width: 200px;
+    background-color: yellow;
+    background-image: url("../media/stainless_background.jpg");
+    border: 2px solid black;
+    border-radius: 4px;
+    padding: 30px
+}
+
+.calculatorClass .buttonAreaClass {
+    margin: 0 auto;
+
 }
 
 .inputAreaClass {
-    block
+    padding-left: 20PX;
+    margin: 0 auto;
+    margin-bottom: 5px;
+
+}
+#tableHeadderId {
+    width: 100%
 }
 
-
-table {
-    margin: 20px;
+#calcButtonsId {
+    margin: 0 auto;
     background-color: teal;
     border: 2px solid rgb(1, 73, 73);
-
-}
-table td {
-    padding: 2px;
 }
 
-table input {
+#calcButtonsId td {
+    padding: 3px;
+}
+
+#calcButtonsId input {
     background-color: wheat;
-    width: 25px;
+    width: 30px;
 }
+
+
 
 .answerAreaClass {
     margin: 10px;
