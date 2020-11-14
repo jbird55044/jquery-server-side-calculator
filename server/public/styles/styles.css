@@ -14,22 +14,26 @@ body {
 
 .calculatorClass .buttonAreaClass {
     margin: 0 auto;
-
 }
 
 .inputAreaClass {
     padding-left: 20PX;
     margin: 0 auto;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     text-emphasis: bold;
     font-size: large;
-
 }
 
 .inputAreaClass input {
     text-emphasis: bold;
     font-size: large;
+}
 
+.inputAreaClass button {
+    border: 1px solid black;
+    border-radius: 2px;
+    padding-top: 3px;
+    padding-bottom: 3px;
 }
 
 #tableHeadderId {
@@ -40,6 +44,7 @@ body {
     margin: 0 auto;
     background-color: teal;
     border: 2px solid rgb(1, 73, 73);
+    border-radius: 3px;
 }
 
 #calcButtonsId td {
@@ -52,8 +57,9 @@ body {
     padding: 5px;
     text-emphasis: bold;
     font-size: large;
+    border: black 1px solid;
+    border-radius: 3px;
 }
-
 
 
 .answerAreaClass {
@@ -61,14 +67,21 @@ body {
     padding: 0px
 }
 
-.answerAreaClass input {
-    margin: 10px;
-    margin-bottom: 0px;
-    padding: 3px;
+.tapeAreaClass button {
+    border:1px solid black;
+    border-radius: 2px;
 }
 
-.answerAreaClass p {
-    margin: 3px;
-    margin-bottom: 0px;
-    padding-top: 5px;
-} 
+.tapeOrderedListClass {
+    margin: 20px;
+    margin-top: 5px;
+    width: 200px;
+    background-color: cornsilk;
+    border: 2px solid black;
+    border-radius: 3px;
+}
+
+.tapeOrderedListClass li {
+    background: rgb(252, 239, 187);
+    padding: 2px;
+}

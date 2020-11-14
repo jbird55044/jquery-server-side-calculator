@@ -36,7 +36,7 @@ function calcButtonPushed () {
         buttonsArray.push(buttonPushed);
         $('#calcInputId').val(numbersString);
     };
-}
+} // end of calcButtonPushed fn
  
 function clearButtonPushed () {
     buttonsArray.splice(0,buttonsArray.length)
@@ -60,11 +60,14 @@ function updateAnswers (response) {
         numbersString = '';
         $('.tapeOrderedListClass').append (html)
     }
+    if ( response.length === 0 ) {
+        $('.tapeOrderedListClass').append (`<li>No Entries</li>`)
+    }
     console.log (`last answer`, lastAnswer);
     $('#calculatedAnswerId').empty();
     $('#calculatedAnswerId').append(lastAnswer);
     $('#calcInputId').val(lastAnswer);
-}
+} // end of updateAnswers fn
 
 
 function postInputs (array) {
@@ -86,7 +89,7 @@ function postInputs (array) {
         alert ('Error in Submitting')
     })
     console.log (`End of POST`);
-}
+}  // end of postInputs
 
 
 
@@ -104,7 +107,7 @@ function getResponse () {
         alert ('Error in Submitting')
     })
     console.log (`End of GET Response`);
-}
+}  // end of getResponse fn
 
 function clearTape () {
     $.ajax({
@@ -120,4 +123,4 @@ function clearTape () {
         alert ('Error in Submitting')
     })
     console.log (`End of clearTape POST`);
-}
+}  // end of clearTape fn
