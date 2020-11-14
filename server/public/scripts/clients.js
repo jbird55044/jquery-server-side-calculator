@@ -47,15 +47,20 @@ function clearButtonPushed () {
 function updateAnswers (response) {
     $('.tapeOrderedListClass').empty()
     let numbersString = '';
+    console.log (`response`, response);
     for ( let i = 0; i < response.length; i += 1 ) {
         for (let j = 0; j < response[i].length; j += 1 ){
             numbersString += response[i][j]
+            lastAnswer=response[i][j]
         }
+        console.log (`numberString`, numbersString);
         let html = `<li>${numbersString}</li>`;
         numbersString = '';
         $('.tapeOrderedListClass').append (html)
     }
-    
+    console.log (`last answer`, lastAnswer);
+    $('#calculatedAnswerId').val (lastAnswer);
+    $('#calcInputId').val(lastAnswer);
 }
 
 

@@ -3,6 +3,16 @@ body {
     margin: 10px;
 }
 
+.calculatorClass {
+    width: 300px;
+    background-color: whitesmoke;
+}
+
+.inputAreaClass {
+    block
+}
+
+
 table {
     margin: 20px;
     background-color: teal;
