@@ -46,7 +46,6 @@ module.exports = function (passedData) {
         } else {
             answer = parseFloat(leftNumber) / parseFloat(rightNumber)
         }
-        answer = answer.round(6)
         passedData.splice(0,passedData.length)
         passedData.push (leftNumber)
         passedData.push ('/')
@@ -70,8 +69,6 @@ module.exports = function (passedData) {
         answer = 'No Valid Calc Found';
         passedData.push (answer);
     }
-
-
 } // end of performMath fn
 
 

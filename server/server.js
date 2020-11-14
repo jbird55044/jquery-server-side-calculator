@@ -27,7 +27,7 @@ let performMath = require('./modules/calcfunction');  // math logic
 
 // to get to data:  http://localhost:5000/cat
 app.get('/calcexchange', (req, res) => {
-    console.log (`Sending calcArray data`);
+    // console.log (`Sending calcArray data`);
     res.send(tapeData);
 });
 
@@ -37,8 +37,7 @@ app.post ('/calcexchange' , (req, res) => {
     res.sendStatus(200);   // tells requester all is OK
     performMath(passedData);
     tapeData.push(passedData);
-    //tapeData.push(performMath(passedData));  //do math, add to tape
-    console.log (`Passed Data at POST`, passedData);
+    // console.log (`Passed Data at POST`, passedData);
 });
 
 // databases and start again
@@ -46,7 +45,7 @@ app.post ('/cleartape' , (req, res) => {
     let passedData = req.body.inputArray;
     res.sendStatus(200);   // tells requester all is OK
     tapeData.splice(0,tapeData.length);
-    console.log (`Clear Tape Post`, tapeData);
+    // console.log (`Clear Tape Post`, tapeData);
 });
 
 // ===  end of routes
