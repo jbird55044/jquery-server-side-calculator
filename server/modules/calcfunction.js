@@ -46,6 +46,7 @@ module.exports = function (passedData) {
         } else {
             answer = parseFloat(leftNumber) / parseFloat(rightNumber)
         }
+        answer = answer.round(6)
         passedData.splice(0,passedData.length)
         passedData.push (leftNumber)
         passedData.push ('/')

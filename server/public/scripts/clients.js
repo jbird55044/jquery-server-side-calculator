@@ -6,8 +6,7 @@ $(document).ready(letsRoll);
 
 
 function letsRoll () {
-
-    console.log (`We are Rolling`);
+    console.log (`We are Rolling Vatti`);
     $('#calcButtonsId').on ('click', 'td input', calcButtonPushed);
     $('#clearButtonId').on ('click', clearButtonPushed);
     $('.tapeOrderedListClass').on ('click', 'li', reRunTapeLine);
@@ -34,6 +33,9 @@ function reRunTapeLine () {
     $(this).addClass('highlight')
 } // end of reRunTapeLine fn
 
+
+// keyboard managment
+// allows for only one math function
 function calcButtonPushed () {
     let mathFunctionSet = false
     let numbersString = '';
@@ -52,7 +54,8 @@ function calcButtonPushed () {
         $('#calcInputId').val(numbersString);
     };
 } // end of calcButtonPushed fn
- 
+
+// user initiated keyboard entry wiping prior to sending to server
 function clearButtonPushed () {
     buttonsArray.splice(0,buttonsArray.length)
     $('#calcInputId').val('');
@@ -60,11 +63,11 @@ function clearButtonPushed () {
 } // end of clearButtonPushed fn
 
 
+// DOM management for calc tape, creates strings from passed array
 function updateAnswers (response) {
     $('.tapeOrderedListClass').empty()
     let numbersString = '';
     let lastAnswer = 0;
-    console.log (`response`, response);
     for ( let i = 0; i < response.length; i += 1 ) {
         for (let j = 0; j < response[i].length; j += 1 ){
             numbersString += response[i][j]
@@ -78,16 +81,16 @@ function updateAnswers (response) {
     if ( response.length === 0 ) {
         $('.tapeOrderedListClass').append (`<li>No Entries</li>`)
     }
-    console.log (`last answer`, lastAnswer);
     $('#calculatedAnswerId').empty();
     $('#calculatedAnswerId').append(lastAnswer);
     $('#calcInputId').val(lastAnswer);
 } // end of updateAnswers fn
 
 
+// empty local keyboard array, push to server requested calcs
+// no entry is assumed to be a '0' by server saving user keying time
 function postInputs (array) {
     array.push('=');
-    console.log (`Post Array Passed`, array);
     $.ajax({
         method: 'POST',
         url: '/calcexchange',
@@ -107,10 +110,8 @@ function postInputs (array) {
 }  // end of postInputs
 
 
-
+// get fresh DOM info for calc tape
 function getResponse () {
-    // making a GET request top our server
-    // returns back a Promise
     $.ajax({
         method: 'GET',
         url: '/calcexchange'
@@ -124,6 +125,8 @@ function getResponse () {
     console.log (`End of GET Response`);
 }  // end of getResponse fn
 
+
+// send server indicator to erase tape, respond w/ fresh DOM info
 function clearTape () {
     $.ajax({
         method: 'POST',
