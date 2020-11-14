@@ -4,7 +4,7 @@ body {
 }
 
 .calculatorClass {
-    width: 200px;
+    width: 250px;
     background-color: yellow;
     background-image: url("../media/stainless_background.jpg");
     border: 2px solid black;
@@ -21,8 +21,17 @@ body {
     padding-left: 20PX;
     margin: 0 auto;
     margin-bottom: 5px;
+    text-emphasis: bold;
+    font-size: large;
 
 }
+
+.inputAreaClass input {
+    text-emphasis: bold;
+    font-size: large;
+
+}
+
 #tableHeadderId {
     width: 100%
 }
@@ -34,12 +43,15 @@ body {
 }
 
 #calcButtonsId td {
-    padding: 3px;
+    padding: 5px;
 }
 
 #calcButtonsId input {
     background-color: wheat;
-    width: 30px;
+    width: 40px;
+    padding: 5px;
+    text-emphasis: bold;
+    font-size: large;
 }
 
 

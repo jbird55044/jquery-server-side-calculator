@@ -14,7 +14,7 @@
     <p> Let's Calculate! </p>
     <div class="calculatorClass">
         <div class="inputAreaClass">
-            <td><input id="calcInputId" type="text"  size=15 placeholder="Numeric Input Here" ></td>
+            <td><input id="calcInputId" type="text"  size=18 placeholder="Numeric Input Here" ></td>
             <button id="clearButtonId">CE</button>
             
             <!-- <button id="submitButtonId">Submit</button> -->
@@ -51,8 +51,9 @@
     </div>
 
     <div class="answerAreaClass">
-        <p>The result:</p>
-        <input type="text" id="calculatedAnswerId" size=20> 
+        <table>
+            <tr><td>The Last Result:</td><td id="calculatedAnswerId"></td></tr>
+        </table>
     </div>
     <div class="tapeAreaClass">
         <button id="clearTapeId">Clear Tape</button>

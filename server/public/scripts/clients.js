@@ -13,6 +13,7 @@ function letsRoll () {
     $('#submitButtonId').on ('click', function () {postInputs(buttonsArray)} )
     $('#equalsButtonId').on ('click', function () {postInputs(buttonsArray)} ) 
     $('#clearTapeId').on ('click', clearTape)
+    getResponse();   //initial grab from server
     
 }
 
@@ -47,6 +48,7 @@ function clearButtonPushed () {
 function updateAnswers (response) {
     $('.tapeOrderedListClass').empty()
     let numbersString = '';
+    let lastAnswer = 0;
     console.log (`response`, response);
     for ( let i = 0; i < response.length; i += 1 ) {
         for (let j = 0; j < response[i].length; j += 1 ){
@@ -59,7 +61,8 @@ function updateAnswers (response) {
         $('.tapeOrderedListClass').append (html)
     }
     console.log (`last answer`, lastAnswer);
-    $('#calculatedAnswerId').val (lastAnswer);
+    $('#calculatedAnswerId').empty();
+    $('#calculatedAnswerId').append(lastAnswer);
     $('#calcInputId').val(lastAnswer);
 }
 
