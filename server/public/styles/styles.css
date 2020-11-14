@@ -85,3 +85,13 @@ body {
     background: rgb(252, 239, 187);
     padding: 2px;
 }
+
+/* JQuery Calls */
+.highlight {
+    background-color: rgb(131, 32, 118);
+    animation: blinker 2s linear 2000;
+  }
+
+@keyframes blinker {  
+    50% { opacity: 0; }
+}

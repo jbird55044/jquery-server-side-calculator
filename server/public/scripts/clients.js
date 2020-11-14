@@ -10,14 +10,29 @@ function letsRoll () {
     console.log (`We are Rolling`);
     $('#calcButtonsId').on ('click', 'td input', calcButtonPushed);
     $('#clearButtonId').on ('click', clearButtonPushed);
-    $('#submitButtonId').on ('click', function () {postInputs(buttonsArray)} )
-    $('#equalsButtonId').on ('click', function () {postInputs(buttonsArray)} ) 
-    $('#clearTapeId').on ('click', clearTape)
+    $('.tapeOrderedListClass').on ('click', 'li', reRunTapeLine);
+    $('#submitButtonId').on ('click', function () {postInputs(buttonsArray)} );
+    $('#equalsButtonId').on ('click', function () {postInputs(buttonsArray)} ); 
+    $('#clearTapeId').on ('click', clearTape);
     getResponse();   //initial grab from server
     
 }
 
 // ----------- functions --------------
+
+// repopulate keyboard array, and calc display upon selected tape line
+function reRunTapeLine () {
+    $('.highlight').removeClass('highlight')
+    let selectedTapeLine = $(this).index();
+    let selectedItem = $(this).text()
+    selectedItem = selectedItem.slice(0, selectedItem.indexOf('='));
+    buttonsArray.splice (0,buttonsArray.length)
+    for ( element of selectedItem ) {
+        buttonsArray.push(element)
+    }
+    $('#calcInputId').val(selectedItem);
+    $(this).addClass('highlight')
+} // end of reRunTapeLine fn
 
 function calcButtonPushed () {
     let mathFunctionSet = false

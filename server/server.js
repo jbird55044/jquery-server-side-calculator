@@ -20,10 +20,9 @@ app.use( bodyParser.urlencoded ( {extended: true}) );
 
 
 
-
 // ---  route for dynamic data  (vary for earch assignment)
 let tapeData = require('./modules/tapedata');  // js is assumed
-let performMath = require('./modules/calcfunction');
+let performMath = require('./modules/calcfunction');  // math logic
 
 
 // to get to data:  http://localhost:5000/cat
@@ -32,6 +31,7 @@ app.get('/calcexchange', (req, res) => {
     res.send(tapeData);
 });
 
+// receive calc request from client
 app.post ('/calcexchange' , (req, res) => {
     let passedData = req.body.inputArray;
     res.sendStatus(200);   // tells requester all is OK
@@ -41,6 +41,7 @@ app.post ('/calcexchange' , (req, res) => {
     console.log (`Passed Data at POST`, passedData);
 });
 
+// databases and start again
 app.post ('/cleartape' , (req, res) => {
     let passedData = req.body.inputArray;
     res.sendStatus(200);   // tells requester all is OK
