@@ -53,8 +53,8 @@ app.post ('/cleartape' , (req, res) => {
 
 
 // start server listening for requests
-app.listen( port, () => {
-    console.log (`Server is Listening on port ${port}`);
-});  
+app.listen(process.env.PORT || port);
+console.log (`Server is Listening on port ${process.env.PORT || port}`);
+ 
 
 
