@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/jbird55044/jquery-server-side-calculator#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "jquery": "^3.5.1",
     "mathjs": "^8.0.1"
   }
